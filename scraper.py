@@ -2,9 +2,7 @@ import os
 import requests
 from BeautifulSoup import BeautifulSoup
 
-url = 'https://www.thirdwell.org/Torah-Portion-Bereishit-Notes-Lesson-01.html'
-
-def getText(url):
+def getText(url=raw_input('Enter URL: ')):
     title = url.split('/').pop()
     if not os.path.exists('./text-files/' + title):
         with open('./text-files/' + title, 'w'): pass
@@ -19,4 +17,4 @@ def getText(url):
 
     return ' '.join(resultArr)
 
-print getText(url)
+print getText()
