@@ -9,7 +9,7 @@ def getText(url=raw_input('Enter URL: ')):
     resultArr = []
     soup = BeautifulSoup(html)
     for p in soup.findAll('p'):
-        resultArr.append(p.text.replace('\n', ' ').replace('\\', ' ').replace('&#xa0;', ' '))
+        resultArr.append(p.text.encode('utf-8').replace('\n', ' ').replace('\\', ' ').replace('&#xa0;', ' '))
     result = ' '.join(resultArr)
 
     title = url.split('/').pop()
